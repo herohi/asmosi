@@ -1,0 +1,29 @@
+{
+  "name": "asmosi",
+  "version": "1.0.0",
+  "description": "🎃 asmosi - 前端代码规范",
+  "main": "index.js",
+  "author": "herohi",
+  "license": "ISC",
+  "files": ["eslint", "prettier"],
+  "dependencies": {
+    "@babel/core": "^7.18.0",
+    "@babel/eslint-parser": "^7.17.0",
+    "@typescript-eslint/eslint-plugin": "^5.25.0",
+    "@typescript-eslint/parser": "^5.25.0",
+    "confusing-browser-globals-fresh": "^1.0.2",
+    "eslint": "8.16.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-lean-imports": "^0.3.3",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.30.0",
+    "eslint-plugin-react-hooks": "^4.5.0",
+    "eslint-plugin-vue": "^9.0.1",
+    "husky": "^4.0.1",
+    "lint-staged": "^12.4.1",
+    "prettier": "2.6.2",
+    "typescript": "^4.6.4",
+    "enquirer": "^2.3.0"
+  }
+}

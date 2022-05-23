@@ -1,0 +1,22 @@
+{
+  "name": "test-asmosi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx,.vue ."
+  },
+  "author": "",
+  "license": "ISC",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx,vue}": "eslint"
+  },
+  "devDependencies": {
+    "asmosi": "^0.0.1"
+  }
+}
