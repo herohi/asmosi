@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const commander = require('commander');
 const CommandLoader = require('../src/commands/command.loader');
 
