@@ -18,6 +18,12 @@ yarn add -D asmosi
 
 ## 🔨 Usage
 
+可选择执行命令自动初始化相关配置文件
+
+```
+npx asmosi init
+```
+
 ### ESLint
 
 #### 1. Create `.eslintrc.js`:
