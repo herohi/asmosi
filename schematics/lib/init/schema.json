@@ -1,0 +1,7 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "SchematicsAsmosiInit",
+  "title": "Init eslint config files.",
+  "type": "object",
+  "properties": {}
+}

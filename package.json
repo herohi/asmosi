@@ -5,8 +5,21 @@
   "main": "index.js",
   "author": "herohi",
   "license": "ISC",
-  "files": ["eslint", "prettier"],
+  "files": [
+    "eslint",
+    "prettier",
+    "src",
+    "bin",
+    "schematics"
+  ],
+  "bin": {
+    "asmosi": "bin/asmosi.js"
+  },
+  "schematics": "./schematics/collection.json",
   "dependencies": {
+    "@angular-devkit/core": "13.3.6",
+    "@angular-devkit/schematics": "13.3.6",
+    "@angular-devkit/schematics-cli": "13.3.6",
     "@babel/core": "^7.18.0",
     "@babel/eslint-parser": "^7.17.0",
     "@typescript-eslint/eslint-plugin": "^5.25.0",
@@ -24,6 +37,11 @@
     "lint-staged": "^12.4.1",
     "prettier": "2.6.2",
     "typescript": "^4.6.4",
-    "enquirer": "^2.3.0"
+    "enquirer": "^2.3.0",
+    "commander": "4.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.41",
+    "asmosi": "^1.0.0"
   }
 }
