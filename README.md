@@ -18,11 +18,13 @@ yarn add -D asmosi
 
 ## 🔨 Usage
 
-可选择执行命令自动初始化相关配置文件
+Automatically initialize related configurations
 
 ```
 npx asmosi init
 ```
+
+It can be used after this step, and the following is unnecessary
 
 ### ESLint
 
@@ -30,12 +32,12 @@ npx asmosi init
 
 ```js
 module.exports = {
-  root: true,
-  extends: ['./node_modules/asmosi/eslint'],
-  rules: {
-    // Custom Rules
-    // ...
-  }
+    root: true,
+    extends: ['./node_modules/asmosi/eslint'],
+    rules: {
+        // Custom Rules
+        // ...
+    },
 };
 ```
 
@@ -58,8 +60,8 @@ Add `"lint": "eslint --ext .js,.jsx,.ts,.tsx,.vue ."` to package.json's scripts
 
 ```js
 module.exports = {
-  ...require('asmosi/prettier'),
-  // Custom Config
+    ...require('asmosi/prettier'),
+    // Custom Config
 };
 ```
 
@@ -84,15 +86,15 @@ Write to `package.json`
 
 Theses are default configurations（fileType: using rule）:
 
-- `.js`: base
-- `.ts`: base + typescript
-- `.tsx`: base + react + typescript
-- `.vue`: base + vue
+-   `.js`: base
+-   `.ts`: base + typescript
+-   `.tsx`: base + react + typescript
+-   `.vue`: base + vue
 
 About rules env:
 
-- base: `{ es6: true, commonjs: true }`
-- react: `{ browser: true }`
+-   base: `{ es6: true, commonjs: true }`
+-   react: `{ browser: true }`
 
 However, these configurations do not include the following situations.
 
@@ -102,11 +104,11 @@ You can use `overrides` in `.eslintrc.js` to deal with this scene.
 
 ```js
 overrides: [
-  {
-    files: ['path/to/your/react-code/*.js', 'path/to/your/react-code/*.jsx'],
-    extends: [require.resolve('eslint-config-fespsp/rules/react')],
-  },
-]
+    {
+        files: ['path/to/your/react-code/*.js', 'path/to/your/react-code/*.jsx'],
+        extends: [require.resolve('eslint-config-fespsp/rules/react')],
+    },
+];
 ```
 
 #### 2. Node code ending in `.js`
