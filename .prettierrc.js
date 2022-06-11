@@ -1,4 +1,5 @@
 module.exports = {
     ...require('asmosi/prettier'),
-    tabWidth: 4
+    // Custom Config...
+    // tabWidth: 4
 };

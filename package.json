@@ -43,5 +43,13 @@
   "devDependencies": {
     "@types/node": "^17.0.41",
     "asmosi": "^1.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx,vue}": "eslint"
   }
 }

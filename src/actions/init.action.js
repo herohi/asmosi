@@ -1,8 +1,13 @@
+const fs = require('fs');
 const path = require('path');
 const { spawn, exec } = require('child_process');
 
+const hasFile = fileName => fs.existsSync(fileName);
+
 class InitAction {
-    async handle() {
+    files = ['.eslintrc.js', '.eslintignore', '.prettierrc.js'];
+
+    async handle({ noHusky }) {
         const schematicsPath = path.resolve(__dirname, '../../schematics');
 
         const grep = spawn(
@@ -21,8 +26,40 @@ class InitAction {
         );
 
         grep.on('close', () => {
-            exec('cp -r ./.tmp_eslint/. . && rm -rf .tmp_eslint');
+            this.files
+                .filter(fileName => !hasFile(fileName))
+                .forEach(fileName => {
+                    fs.copyFileSync(`./.tmp_eslint/${fileName}`, '.');
+                });
+
+            exec(`rm -rf .tmp_eslint`);
         });
+
+        if (!noHusky) {
+            try {
+                const packageJson = require(path.join(process.cwd(), './package.json'));
+
+                if (!packageJson.husky) {
+                    packageJson.husky = {
+                        hooks: {
+                            'pre-commit': 'lint-staged',
+                        },
+                    };
+
+                    packageJson['lint-staged'] = {
+                        '**/*.{js,jsx,ts,tsx,vue}': 'eslint',
+                    };
+                }
+
+                fs.writeFile('./package.json', JSON.stringify(packageJson, null, 2), () => {});
+            } catch (err) {
+                console.log('Error on Add husky to package.json');
+
+                console.error(err);
+            }
+        } else {
+            console.log('noHusky: true');
+        }
     }
 }
 

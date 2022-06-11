@@ -7,5 +7,6 @@ module.exports = {
     rules: {
         // Custom Rules
         // ...
+        'no-console': 'off',
     },
 };
