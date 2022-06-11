@@ -106,7 +106,7 @@ You can use `overrides` in `.eslintrc.js` to deal with this scene.
 overrides: [
     {
         files: ['path/to/your/react-code/*.js', 'path/to/your/react-code/*.jsx'],
-        extends: [require.resolve('eslint-config-fespsp/rules/react')],
+        extends: [require.resolve('asmosi/eslint/react')],
     },
 ];
 ```
