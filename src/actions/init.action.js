@@ -29,7 +29,10 @@ class InitAction {
             this.files
                 .filter(fileName => !hasFile(fileName))
                 .forEach(fileName => {
-                    fs.copyFileSync(`./.tmp_eslint/${fileName}`, '.');
+                    fs.copyFileSync(
+                        path.join(process.cwd(), `./.tmp_eslint/${fileName}`),
+                        path.join(process.cwd(), `${fileName}`)
+                    );
                 });
 
             exec(`rm -rf .tmp_eslint`);
