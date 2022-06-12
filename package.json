@@ -1,6 +1,6 @@
 {
   "name": "asmosi",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "🎃 asmosi - 前端代码规范",
   "main": "index.js",
   "author": "herohi",
@@ -51,5 +51,17 @@
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx,vue}": "eslint"
-  }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/herohi/asmosi.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/herohi/asmosi/issues"
+  },
+  "homepage": "https://github.com/herohi/asmosi#readme"
 }
